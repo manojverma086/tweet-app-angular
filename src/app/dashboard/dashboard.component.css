@@ -1,0 +1,62 @@
+.sub-header {
+    width: 100%;
+    height: 80px;
+    background-color: #ffffff;
+}
+.itemsperpage-div{
+    margin-left: 5%;
+    margin-top: 5px;
+}
+.itemsperpage-div,.sort-div {
+    width:20%;
+    display: inline-block;
+}
+.itemsperpage-div mat-form-field {
+    width: 60px;
+    padding-left: 15px;
+}
+.sort-div mat-form-field {
+    width: 120px;
+    padding-left: 15px;
+}
+
+.main-content{
+    width:100%;
+    margin:auto;
+    overflow: hidden;
+    background-color: #f2f2f2;
+    padding-bottom:2%;
+}
+.tweet-column {
+    float: left;
+    width: 29%;
+    padding-top:2%;
+}
+.tweet-column.col1 {
+    margin-left: 5%;
+}
+.tweet-column.col2, .tweet-column.col3{
+    margin-left: 2%;
+}
+
+.tweet-date {
+    padding-top:1%;
+    position: absolute;
+    right: 7%;
+    font-size: smaller;
+    color: rgba(33, 33, 33, 0.87);
+}
+.tweet-link {
+position: absolute;
+right:7%
+}
+.tweet-card {
+    max-width: 400px;
+    background-color: #ffffff;
+    margin-bottom: 5%;
+}
+  
+.tweet-card-header-image {
+background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+background-size: cover;
+}

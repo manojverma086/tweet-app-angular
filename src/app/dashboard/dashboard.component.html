@@ -1,0 +1,85 @@
+<div class="sub-header">
+  <div class="itemsperpage-div">
+    Items Per Column
+    <mat-form-field class="itemsperpage-select">
+      <mat-select [(value)]="itemspercolumn">
+        <mat-option value="10">10</mat-option>
+        <mat-option value="20">20</mat-option>
+        <mat-option value="30">30</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+
+  <div class="sort-div">
+    Sort By Time
+    <mat-form-field>
+      <mat-select [(value)]="sortBy" (selectionChange)="sortChangeEvent($event.value)">
+        <mat-option value="desc">Most recent</mat-option>
+        <mat-option value="asc">Oldest First</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+</div>
+<div class="main-content">
+<mat-progress-bar mode="indeterminate" *ngIf="isLoadingFinished()"></mat-progress-bar>
+  <div class="tweet-column col1">
+    <mat-card class="tweet-card" *ngFor="let tweet of tweets['makeSchool']|slice:0:itemspercolumn">
+      <mat-card-header>
+        <div mat-card-avatar class="tweet-card-header-image"></div>
+        <mat-card-title>{{tweet.user.name}}</mat-card-title>
+        <mat-card-subtitle>@{{tweet.user.screen_name}}</mat-card-subtitle>
+        <span class="tweet-date">{{tweet.created_at |date:"MMM d, y, h:mm a"}}</span>
+      </mat-card-header>
+      <!-- <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu"> -->
+      <mat-card-content>
+        <p [innerHTML]="tweet.text">
+        </p>
+        <a href="https://twitter.com/i/web/status/{{tweet.id_str}}" target="_blank" rel="noopener noreferrer">tweet
+          link</a>
+      </mat-card-content>
+      <mat-card-actions>
+        <!-- <button mat-button class="tweet-link" (click)="goToTweet(tweet.id_str)">See on Twitter</button> -->
+      </mat-card-actions>
+    </mat-card>
+  </div>
+  <div class="tweet-column col2">
+        <mat-card class="tweet-card" *ngFor="let tweet of tweets['newsycombinator']|slice:0:itemspercolumn">
+          <mat-card-header>
+            <div mat-card-avatar class="tweet-card-header-image"></div>
+            <mat-card-title>{{tweet.user.name}}</mat-card-title>
+            <mat-card-subtitle>@{{tweet.user.screen_name}}</mat-card-subtitle>
+            <span class="tweet-date">{{tweet.created_at |date:"MMM d, y, h:mm a"}}</span>
+          </mat-card-header>
+          <!-- <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu"> -->
+          <mat-card-content>
+            <p [innerHTML]="tweet.text">
+            </p>
+            <a href="https://twitter.com/i/web/status/{{tweet.id_str}}" target="_blank" rel="noopener noreferrer">tweet
+              link</a>
+          </mat-card-content>
+          <mat-card-actions>
+            <!-- <button mat-button class="tweet-link" (click)="goToTweet(tweet.id_str)">See on Twitter</button> -->
+          </mat-card-actions>
+        </mat-card>
+      </div>
+      <div class="tweet-column col3">
+            <mat-card class="tweet-card" *ngFor="let tweet of tweets['ycombinator']|slice:0:itemspercolumn">
+              <mat-card-header>
+                <div mat-card-avatar class="tweet-card-header-image"></div>
+                <mat-card-title>{{tweet.user.name}}</mat-card-title>
+                <mat-card-subtitle>@{{tweet.user.screen_name}}</mat-card-subtitle>
+                <span class="tweet-date">{{tweet.created_at |date:"MMM d, y, h:mm a"}}</span>
+              </mat-card-header>
+              <!-- <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu"> -->
+              <mat-card-content>
+                <p [innerHTML]="tweet.text">
+                </p>
+                <a href="https://twitter.com/i/web/status/{{tweet.id_str}}" target="_blank" rel="noopener noreferrer">tweet
+                  link</a>
+              </mat-card-content>
+              <mat-card-actions>
+                <!-- <button mat-button class="tweet-link" (click)="goToTweet(tweet.id_str)">See on Twitter</button> -->
+              </mat-card-actions>
+            </mat-card>
+          </div>
+</div>
