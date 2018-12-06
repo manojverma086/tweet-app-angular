@@ -35,6 +35,7 @@ import {
   MatDialogModule,
   MatDatepickerModule,
 } from '@angular/material';
+import { State } from './dashboard/state';
 
 @NgModule({
   declarations: [
@@ -71,7 +72,7 @@ import {
   MatDialogModule,
   MatDatepickerModule
   ],
-  providers: [DashboardService],
+  providers: [DashboardService, State],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

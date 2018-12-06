@@ -1,8 +1,8 @@
-<div class="sub-header">
+<div class="sub-header" *ngIf="state">
   <div class="itemsperpage-div">
     Items Per Column
     <mat-form-field class="itemsperpage-select">
-      <mat-select [(value)]="itemspercolumn">
+      <mat-select [(value)]="state.filters.itemspercolumn" (selectionChange)="saveState()">
         <mat-option value="10">10</mat-option>
         <mat-option value="20">20</mat-option>
         <mat-option value="30">30</mat-option>
@@ -12,7 +12,7 @@
   <div class="sort-div">
     Sort By Time
     <mat-form-field>
-      <mat-select [(value)]="sortBy" (selectionChange)="sortChangeEvent($event.value)">
+      <mat-select [(value)]="state.filters.sortBy" (selectionChange)="sortChangeEvent($event.value)">
         <mat-option value="desc">Most recent</mat-option>
         <mat-option value="asc">Oldest First</mat-option>
       </mat-select>
@@ -21,8 +21,8 @@
 </div>
 <div class="main-content">
 <mat-progress-bar mode="indeterminate" *ngIf="isLoadingFinished()"></mat-progress-bar>
-  <div class="tweet-column col-{{screen}}" *ngFor="let screen of screen_names">
-    <mat-card class="tweet-card" *ngFor="let tweet of tweets[screen]|slice:0:itemspercolumn">
+  <div class="tweet-column col-{{screen}}" *ngFor="let screen of state.screen_names">
+    <mat-card class="tweet-card" *ngFor="let tweet of state.tweets[screen]|slice:0:state.filters.itemspercolumn">
       <mat-card-header>
         <div mat-card-avatar class="tweet-card-header-image" [ngStyle]="{ 'background-image': 'url(' + tweet.user.profile_image_url_https + ')'}"></div>
         <mat-card-title>{{tweet.user.name}}</mat-card-title>
