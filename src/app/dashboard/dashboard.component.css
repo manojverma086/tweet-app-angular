@@ -32,10 +32,10 @@
     width: 29%;
     padding-top:2%;
 }
-.tweet-column.col1 {
+.tweet-column.col-makeSchool {
     margin-left: 5%;
 }
-.tweet-column.col2, .tweet-column.col3{
+.tweet-column.col-newsycombinator, .tweet-column.col-ycombinator{
     margin-left: 2%;
 }
 
@@ -57,6 +57,6 @@ right:7%
 }
   
 .tweet-card-header-image {
-background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+
 background-size: cover;
 }
