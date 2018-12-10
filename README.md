@@ -31,6 +31,7 @@ Added till now-
 	- 3. Displaying all tweets with real content with link to user_mentions and hashtags.
 	- 4. Urls in tweet text also mapped to real urls.
 	- 5. Link to tweet also provided.
+	- 6. Localstorage persist filters like sorted and count of items per column. 
 
 == Installation ==
 Initial setup guide
@@ -40,11 +41,13 @@ Initial setup guide
  - Step 1. Install latest version of  npm and nodejs
  - Step 2. Open command line and Install angular cli globally:
 npm install -g @angular/cli	
- - Step 3. You can run twitter-proxy module from command line using command twitter-proxy ./config.json
-this way you will face CORS issue in browser. just install any cors extension and allow origin * it will work.
- - Step 4. Unzip the project folder
+ - Step 3. Unzip the project folder
+ - Step 4. Edit server/config.json file and put all secrets and token of your twitter account
  - Step 5. Go to the project directory where angular-cli.json file located
- - Step 6. Open the application in browser using command   
-ng serve --open   
- - Step 7. The ng serve command builds the app, starts the development server, watches the source files, and rebuilds the app as you make changes to those files.
+ - Step 6. Run command "npm start-erver", it will start twitter-proxy with given secret and tokens in server/config.json file
+ - Step 7. Open new command line window
+ - Step 8. Run command "npm start" in this window   
+ - Step 9. The ng serve command builds the app, starts the development server, watches the source files, and rebuilds the app as you make changes to those files.
 The --open flag opens a browser to http://localhost:4200/.
+ - Step 10. Before opening url in browser, install any cors extension to enable cors in browser. This is only in development version, for production use we can allow cors for ui server on our backend server. 
+ - Step 11. Enable cors and open url http://localhost:4200/dashboard in browser.
