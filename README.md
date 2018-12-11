@@ -44,7 +44,7 @@ npm install -g @angular/cli
  - Step 3. Unzip the project folder
  - Step 4. Edit server/config.json file and put all secrets and token of your twitter account
  - Step 5. Go to the project directory where angular-cli.json file located
- - Step 6. Run command "npm start-erver", it will start twitter-proxy with given secret and tokens in server/config.json file
+ - Step 6. Run command "npm run start-erver", it will start twitter-proxy with given secret and tokens in server/config.json file
  - Step 7. Open new command line window
  - Step 8. Run command "npm start" in this window   
  - Step 9. The ng serve command builds the app, starts the development server, watches the source files, and rebuilds the app as you make changes to those files.
